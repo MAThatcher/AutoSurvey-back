@@ -1,8 +1,13 @@
 package com.revature.controllers;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.revature.beans.Question;
 import com.revature.beans.Response;
 import com.revature.services.ResponseService;
 
@@ -72,6 +78,35 @@ public class ResponseControllerImpl implements ResponseController {
 		return null;
 	}
 
+	@Override
+	@PostMapping(value = "/responsejson", consumes="application/json")
+	public String addManyResponses(@RequestBody String json) {
+		JSONObject responses = new JSONObject(json);
+		List<List<String>> allQuestions = new ArrayList<List<String>>();
+		List<List<String>> allAnswers = new ArrayList<List<String>>();
+		try {
+			JSONArray data = responses.getJSONArray("data");
+			for (int i=0;i<data.length();++i) {
+				JSONObject response = data.getJSONObject(i);
+				List<String> questions = new ArrayList<String>();
+				List<String> answers = new ArrayList<String>();
+				Iterator<String> keys=response.keys();
+				while (keys.hasNext()) {
+					String question=keys.next();
+					answers.add(response.getString(question));
+					questions.add(question);
+				}
+				allQuestions.add(questions);
+				allAnswers.add(answers);
+			}
+		} catch (JSONException e) {
+			return "Error";
+		}
+		System.out.println(allQuestions.size());
+		System.out.println(allAnswers.size());
+		return "OK";
+	}
+	
 	@Override
 	@PutMapping(value = "/response/{id}", consumes = "application/json")
 	public boolean updateResponse(@PathVariable("id") int id, @RequestBody Response r) {

@@ -17,6 +17,8 @@ public interface ResponseController {
 	 */
 	Response addResponse(Response r);
 	
+	String addManyResponses(String json);
+	
 	/**
 	 * <strong>deleteResponse</strong> captures HTTP DELETE requests sent 
 	 * to the URI "/response/id" where id is a number. It accepts the id
