@@ -11,6 +11,5 @@ public interface UserController {
 	public List<User> getAllUsers();
 	public User updateUser(int id, User user);
 	public boolean deleteUser(int id);
-	public User getUserByEmailAndPassword(String email, String password);
 
 }
