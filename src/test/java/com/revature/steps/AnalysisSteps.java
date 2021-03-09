@@ -1,6 +1,7 @@
 package com.revature.steps;
 
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 
@@ -15,6 +16,7 @@ public class AnalysisSteps {
 
 	public static WebDriver driver = AnalysisRunner.driver;
 	public static AnalysisPage analysispages = AnalysisRunner.analysispage;
+	public static JavascriptExecutor js = (JavascriptExecutor) driver;
 	String url = "http://ec2-54-173-212-237.compute-1.amazonaws.com:8080/AutoSurvey/analysis.html";
 
 	@Given("^the user is logged in$")
@@ -25,6 +27,7 @@ public class AnalysisSteps {
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
+		js.executeScript("arguments[0].scrollIntoView();", analysispages.email);
 		analysispages.email.sendKeys("admin@admin.com");
 
 		try {

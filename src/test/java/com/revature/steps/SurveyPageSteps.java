@@ -34,8 +34,9 @@ public class SurveyPageSteps {
 	@When("^The User views the Name Field$")
 	public void the_User_views_the_Name_Field() throws Throwable
 	{
-		assertTrue(true);
-		//js.executeScript("arguments[0].scrollIntoView();", surveypage.nameField);
+		//assertTrue(true);
+		js.executeScript("arguments[0].scrollIntoView();", surveypage.nameField);
+		js.executeScript("window.scrollBy(0,400)");
 		try {
 			Thread.sleep(1000);
 		}
@@ -95,7 +96,7 @@ public class SurveyPageSteps {
 	public void the_User_views_the_Batch_dropdown() throws Throwable 
 	{
 		js.executeScript("arguments[0].scrollIntoView();", surveypage.batchDropdown);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -146,7 +147,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Training Satisfaction radio button spread$")
 	public void the_User_views_the_Training_Satisfaction_radio_button_spread() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.satisfactionNotSat);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -224,7 +225,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Email field$")
 	public void the_User_views_the_Email_field() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.emailField);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -258,7 +259,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Training Location dropdown$")
 	public void the_User_views_the_Training_Location_dropdown() throws Throwable {
 	     js.executeScript("arguments[0].scrollIntoView();", surveypage.locationDropdown);
-	     js.executeScript("window.scrollBy(0,200)");
+	     js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -283,7 +284,7 @@ public class SurveyPageSteps {
 	public void the_User_views_the_Batch_dropdown_again() throws Throwable 
 	{
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.batchDropdown);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -307,7 +308,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Week dropdown$")
 	public void the_User_views_the_Week_dropdown() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.weekDropdown);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -331,7 +332,6 @@ public class SurveyPageSteps {
 	@When("^The User views the Training Satisfaction radio button field$")
 	public void the_User_views_the_Training_Satisfaction_radio_button_field() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.satisfactionMidSat);
-	    js.executeScript("window.scrollBy(0,200)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -391,7 +391,7 @@ public class SurveyPageSteps {
 	@When("^The User views the One-on-One and Assessment radio button field$")
 	public void the_User_views_the_One_on_One_and_Assessment_radio_button_field() throws Throwable {
 	     js.executeScript("arguments[0].scrollIntoView();", surveypage.oneOnOneNo);
-	     js.executeScript("window.scrollBy(0,200)");
+	     js.executeScript("window.scrollBy(0,400)");
 	  try {
 			Thread.sleep(1000);
 		}
@@ -414,7 +414,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Understanding of Topics radio button field$")
 	public void the_User_views_the_Understanding_of_Topics_radio_button_field() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.understandingMid);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	     try {
 			Thread.sleep(1000);
 		}
@@ -437,7 +437,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Pace of Training radio button field$")
 	public void the_User_views_the_Pace_of_Training_radio_button_field() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.paceTooFast);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	     try {
 			Thread.sleep(1000);
 		}
@@ -505,7 +505,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Questions radio button field$")
 	public void the_User_views_the_Questions_radio_button_field() throws Throwable {
 //	    js.executeScript("arguments[0].scrollIntoView();", surveypage.questionsEncouragedDisagree);
-//	    js.executeScript("window.scrollBy(0,200)");
+//	    js.executeScript("window.scrollBy(0,400)");
 		assertTrue(true);
 	     try {
 			Thread.sleep(1000);
@@ -529,7 +529,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Training and Projects radio button field$")
 	public void the_User_views_the_Training_and_Projects_radio_button_field() throws Throwable {
 //	    js.executeScript("arguments[0].scrollIntoView();", surveypage.metExpectationsDisagree);
-//	    js.executeScript("window.scrollBy(0,200)");
+//	    js.executeScript("window.scrollBy(0,400)");
 		assertTrue(true);
 	     try {
 			Thread.sleep(1000);
@@ -553,7 +553,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Training Issues field$")
 	public void the_User_views_the_Training_Issues_field() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.trainingIssues);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	     try {
 			Thread.sleep(1000);
 		}
@@ -587,7 +587,7 @@ public class SurveyPageSteps {
 	@When("^The User views the Overall Feedback field$")
 	public void the_User_views_the_Overall_Feedback_field() throws Throwable {
 	    js.executeScript("arguments[0].scrollIntoView();", surveypage.trainingFeedback);
-	    js.executeScript("window.scrollBy(0,200)");
+	    js.executeScript("window.scrollBy(0,400)");
 	     try {
 			Thread.sleep(1000);
 		}
@@ -622,7 +622,7 @@ public class SurveyPageSteps {
 	public void the_User_views_the_Submit_button() throws Throwable
 	{
 		js.executeScript("arguments[0].scrollIntoView();", surveypage.submit);
-		js.executeScript("window.scrollBy(0,200)");
+		js.executeScript("window.scrollBy(0,400)");
 		 try {
 			Thread.sleep(1000);
 		}
