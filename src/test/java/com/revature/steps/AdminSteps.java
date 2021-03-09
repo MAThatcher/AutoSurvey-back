@@ -1,6 +1,7 @@
 package com.revature.steps;
 
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import com.revature.pages.AdminPage;
@@ -12,8 +13,7 @@ import cucumber.api.java.en.When;
 public class AdminSteps {
 	public static AdminPage adminpage = AdminRunner.adminpage;
 	public static WebDriver driver = AdminRunner.driver;
-	
-	
+	public static JavascriptExecutor js = (JavascriptExecutor) driver;		
 	
 	String url = "http://ec2-54-173-212-237.compute-1.amazonaws.com:8080/AutoSurvey/admin.html";
 
@@ -22,6 +22,7 @@ public class AdminSteps {
 	    // Write code here that turns the phrase above into concrete actions
 		driver.get("http://ec2-54-173-212-237.compute-1.amazonaws.com:8080/AutoSurvey/");
 		
+		js.executeScript("arguments[0].scrollIntoView();", adminpage.email);
 		   adminpage.email.sendKeys("admin@admin.com"); // to be changed to test user when that gets created
 		    try {
 				Thread.sleep(1000);
@@ -29,6 +30,7 @@ public class AdminSteps {
 				e.printStackTrace();
 			}
 		    
+		    js.executeScript("arguments[0].scrollIntoView();", adminpage.password);
 		    adminpage.password.sendKeys("admin");
 		    try {
 				Thread.sleep(1000);
@@ -36,6 +38,7 @@ public class AdminSteps {
 				e.printStackTrace();
 			}
 		    
+		    js.executeScript("arguments[0].scrollIntoView();", adminpage.loginBtn);
 		    adminpage.loginBtn.click();
 		    try {
 				Thread.sleep(1000);
@@ -57,7 +60,6 @@ public class AdminSteps {
 
 	@When("^the Admin clicks on the First Name Input$")
 	public void the_Admin_clicks_on_the_First_Name_Input() throws Throwable {
-		// Write code here that turns the phrase above into concrete actions
 		adminpage.first.click();
 		try {
 			Thread.sleep(1000);
